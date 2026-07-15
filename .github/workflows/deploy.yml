@@ -26,3 +26,21 @@ jobs:
       - name: Push Docker Image
         run: |
           docker push krishnnajaiswal/zero-touch-deployment:latest
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.PUBLIC_IP }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+           docker pull krishnnajaiswal/zero-touch-deployment:latest
+
+           docker stop app || true
+
+           docker rm app || true
+
+           docker run -d \
+           --name app \
+           --restart unless-stopped \
+           -p 80:8000 \
+           krishnnajaiswal/zero-touch-deployment:latest
