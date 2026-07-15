@@ -30,7 +30,7 @@ jobs:
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.PUBLIC_IP }}
-          username: ${{ secrets.EC2_USERNAME }}
+          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
            docker pull krishnnajaiswal/zero-touch-deployment:latest
