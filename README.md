@@ -241,6 +241,11 @@ EC2_SSH_KEY
 - Security Scanning using Trivy
 - Multi-stage Docker Build
 - Blue-Green Deployment
+- Allocate an AWS Elastic IP to avoid changing the EC2 public IP after stop/start.
+
+ 
+
+
 
 ---
 
