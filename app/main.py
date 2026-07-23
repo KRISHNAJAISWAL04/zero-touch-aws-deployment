@@ -13,7 +13,7 @@ app = FastAPI(
 @app.get("/")
 def home():
     return {
-        "project": "Zero Touch AWS Deployment ready",
+        "project": "Zero Touch AWS Deployment ",
         "status": "Running 🚀",
         "version": "1.0.0"
     }
