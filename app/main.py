@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 
 app = FastAPI(
-    title="Zero Touch AWS Deployment API",
+    title="Zero Touch AWS Deployment ",
     version="1.0.0"
 )
 
